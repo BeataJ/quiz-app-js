@@ -3,7 +3,7 @@ const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonElement = document.getElementById('answerButton');
 
-const shuffledQuestions, currentQuestionIndex;
+let shuffledQuestions, currentQuestionIndex;
 
 startButton.addEventListener('click', startGame);
 
@@ -21,7 +21,15 @@ function setNextQuestion() {
 }
 
 function showQuestion(question) {
-
+   questionElement.innerHTML = question.question;
+   question.answers.forEach(answer => {
+      const button = document.createElement('button');
+      button.innerText = answer.text;
+      button.classList.add('btn');
+      if(answer.correct) {
+         button.dataset.correct = answer.correct
+      }
+   })
 }
 
 function selectAnswer() {
