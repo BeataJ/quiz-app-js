@@ -18,7 +18,7 @@ function selectAnswer() {
 
 }
 
-const question = [
+const questions = [
    {
       question: 'What is 2 + 2',
       answers: [
