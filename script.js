@@ -36,6 +36,13 @@ function showQuestion(question) {
    })
 }
 
+function resetState() {
+   nextButton.classList.add('hide')
+   while (answerButtonElement.firstChild) {
+      answerButtonElement.removeChild(answerButtonElement.firstChild);
+   }
+}
+
 function selectAnswer(e) {
 
 }
