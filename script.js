@@ -1,7 +1,7 @@
 const startButton = document.getElementById('start-btn');
 const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
-const answerButtonElement = document.getElementById('answerButton');
+const answerButtonElement = document.getElementById('answer-buttons');
 
 let shuffledQuestions, currentQuestionIndex;
 
@@ -29,11 +29,12 @@ function showQuestion(question) {
       if(answer.correct) {
          button.dataset.correct = answer.correct
       }
-      button.addEventListener('click', selectAnswer)
+      button.addEventListener('click', selectAnswer);
+      answerButtonElement.appendChild(button)
    })
 }
 
-function selectAnswer() {
+function selectAnswer(e) {
 
 }
 
